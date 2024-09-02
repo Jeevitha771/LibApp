@@ -1,0 +1,66 @@
+<div class="container mt-5">
+  <h2 class="mb-4">Library Inventory</h2>
+  <a routerLink="/addBooks" class="btn btn-primary mb-4">Add New Book</a>
+
+  <!-- Angular Material Table -->
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <!-- Book Name Column -->
+      <ng-container matColumnDef="BookName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Book Name</th>
+        <td mat-cell *matCellDef="let book">{{ book.BookName }}</td>
+      </ng-container>
+
+      <!-- Author Column -->
+      <ng-container matColumnDef="Author">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Author</th>
+        <td mat-cell *matCellDef="let book">{{ book.Author }}</td>
+      </ng-container>
+
+      <!-- Description Column -->
+      <ng-container matColumnDef="Description">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+        <td mat-cell *matCellDef="let book">{{ book.Description }}</td>
+      </ng-container>
+
+      <!-- Status Column -->
+      <ng-container matColumnDef="Status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+        <td mat-cell *matCellDef="let book">{{ book.Status }}</td>
+      </ng-container>
+
+      <!-- Comment Column -->
+      <ng-container matColumnDef="Comment">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Comment</th>
+        <td mat-cell *matCellDef="let book">{{ book.Comment }}</td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="Actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let book">
+          <button (click)="editBook(book)" mat-raised-button color="warn">
+            Edit
+          </button>
+          <button
+            (click)="deleteBook(book.BookName)"
+            mat-raised-button
+            color="accent"
+          >
+            Delete
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Table Header and Rows -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <!-- Paginator -->
+    <mat-paginator
+      [pageSizeOptions]="[2, 3, 5]"
+      showFirstLastButtons
+    ></mat-paginator>
+  </div>
+</div>

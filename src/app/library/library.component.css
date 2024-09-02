@@ -1,0 +1,23 @@
+.card {
+  border-radius: 0.5rem;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.btn {
+  margin-right: 10px;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
