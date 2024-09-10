@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "concurrently \"npm run frontend\" \"npm run backend\"",
     "build": "npm run build-frontend && npm run build-backend",
-    "frontend": "ng serve",
+    "frontend": "node start.js",
     "backend": "nodemon app.js",
     "build-frontend": "ng build --configuration production",
     "build-backend": "npm install"
