@@ -2,7 +2,7 @@ const { exec } = require("child_process");
 const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
 
-const port = process.env.PORT2 || 8022;
+const port = process.env.PORT2 || 8080;
 
 exec(`ng serve --port ${port}`, (err, stdout, stderr) => {
   if (err) {
