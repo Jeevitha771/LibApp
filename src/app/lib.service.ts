@@ -8,8 +8,9 @@ import { LibModel } from './lib.model';
 export class LibService {
   constructor(private http: HttpClient) {}
 
-  baseurl: string = 'https://mean3.onrender.com/';
-
+  //baseurl: string = 'https://mean3.onrender.com/';
+  
+  baseurl: string = 'http://localhost:5000'
   getAllLibs() {
     return this.http.get<LibModel[]>(this.baseurl + 'Allbooks');
   }
